@@ -19,17 +19,28 @@ puts "----------"
 @store2.employees.create(first_name: "Hey", last_name: "Yo", hourly_rate: 133)
 
 # hourly_rate too high
-@emX = @store3.employees.create(first_name: "Sup", last_name: "Ney", hourly_rate: 1111)
-puts @emX.errors.messages
+# @emX = @store3.employees.create(first_name: "Sup", last_name: "Ney", hourly_rate: 1111)
+# puts @emX.errors.messages
 
 # check if Stores carry at least one of the men's or women's apparel
-@storeX = Store.create(name: "Maple", annual_revenue: 1, mens_apparel: false, womens_apparel: false)
-puts @storeX.errors.messages
+# @storeX = Store.create(name: "Maple", annual_revenue: 1, mens_apparel: false, womens_apparel: false)
+# puts @storeX.errors.messages
 
 # returns Vancouver cuz KV works in @store1 which is Vancouver
-@firstEmployeeStores = Employee.first.store.name
-puts @firstEmployeeStores
+# @firstEmployeeStores = Employee.first.store.name
+# puts @firstEmployeeStores
 
 # can't pass validation @store1
-@storeY = Store.create(name: "Leaves")
-puts @storeY.errors.messages
+# @storeY = Store.create(name: "Leaves")
+# puts @storeY.errors.messages
+
+puts "<------- GIVE ME A STORE NAME ------->"
+
+storeName = gets.chomp
+@storeX = Store.create(name: storeName)
+
+puts "<--------------- Error -------------->"
+
+puts @storeX.errors.messages
+
+puts "<--------------- End ---------------->"
